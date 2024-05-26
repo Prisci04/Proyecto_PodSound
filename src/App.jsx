@@ -1,47 +1,14 @@
+import Header from './components/Header'
+
+
 function App() {
-  // AQUI VAN LAS FUNCIONES
-  const hola = "prisci";
 
   return (
     // AQUI VA EL HTML
 
     <>
-      <header className="header">
-        <div className="contenedor">
-          <div className="barra">
-            <div className="contain__logo">
-              <a className="logo" href="index.html">
-                <img
-                  className="content__img img__logo"
-                  src="/img/logo-img.png"
-                  alt=""
-                  type="img/svg"
-                />
-              </a>
-            </div>
-
-            {/* <!-- NAVEGACION --> */}
-            <nav className="navegacion">
-              <a
-                href="inicioSesion.html"
-                className="navegacion__enlace nav__item--active "
-              >
-                Inicio
-              </a>
-              <a href="#" className="navegacion__enlace">
-                Nosotros
-              </a>
-              <a href="#" className="navegacion__enlace">
-                Planes{" "}
-              </a>
-              <a href="#" className="navegacion__enlace">
-                Contacto
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
+      
+    <Header/>
       <section className="layout__principal">
         <div className="principal__contain">
           {/* <!-- GRID 1 --> */}
