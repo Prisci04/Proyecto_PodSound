@@ -27,7 +27,7 @@ function Header() {
                 Nosotros
               </a>
               <a href="#" className="navegacion__enlace">
-                Planes{" "}
+                Planes
               </a>
               <a href="#" className="navegacion__enlace">
                 Contacto
