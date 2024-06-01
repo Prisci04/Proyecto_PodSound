@@ -1,6 +1,6 @@
 import {useForm} from 'react-hook-form';
 import { registerRequest } from '../api/auth';
-
+import { useHistory } from 'react-router-dom'
 
 
 function FormRegistro(){

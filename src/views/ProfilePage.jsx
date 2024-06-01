@@ -7,7 +7,7 @@ function ProfilePage() {
     <>
 
     <HeaderAuth/>
-    <h1>olaa</h1>
+    
       <div className="body__edit-profile">
         <div className="main-content">
           <h1 className="main-title">Editar perfil</h1>

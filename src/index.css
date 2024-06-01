@@ -867,3 +867,102 @@ input[type="file"]{
 
 
 
+
+
+
+/* Iniciar sesion */
+
+.contain__inicio-sesion, .contain__recuperar-pass{  /*padre */
+  background-image: url(/img/bg-inicio-sesion.png);
+  width: 100%;
+  height: 70rem;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  display: flex;
+  justify-content: center;
+  
+
+}
+
+.section__form-inicio{
+  background-color: var(--color-secundario);
+  width: 40rem;
+  height: 40rem;
+  margin-top: 5rem;
+  border-radius: 1rem;
+  
+  align-items: center;
+  text-align: center;
+  
+}
+
+.section__form-contain{ 
+  margin-top: 5rem ;
+  
+}
+
+.titulo-inicio{
+  margin-bottom: 3rem;
+  color: var(--color-blanco);
+}
+
+ .contenido__input-inicio{ /*div que envuelve al input */
+  margin-bottom: 3rem;
+}
+
+.input__item-inicio{ /*inputs */
+  padding: 1rem;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+}
+
+.contain__texto-recuperar-pass{ /*div que envuelve el texto olvidado contrasena */
+  margin-bottom: 3rem;
+}
+
+.texto-recuperar-pass, .link__regreso{
+  color: var(--color-blanco);
+  text-decoration: underline;
+}
+
+.link__regreso{
+  color: var(--color-principal);
+}
+
+.texto{
+  margin-top: 1rem;
+  
+}
+
+
+/* Recuperar contraseña */
+
+.section__form-recuperar{
+  background-color: var(--color-secundario); 
+  width: 40rem;
+  height: 40rem;
+  margin-top: 5rem;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+
+.titulo-recuperar{
+  margin-bottom: 5rem;
+  color: var(--color-blanco);
+}
+ .contenido__input{
+  margin-bottom: 3rem;
+}
+
+ .input__item-recuperar{
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+ }

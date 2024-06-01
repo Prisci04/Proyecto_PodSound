@@ -1,11 +1,10 @@
-import FormRegistro from '../components/FormRegistro';
-import Header from '../components/Header'
+import FormRegistro from "../components/FormRegistro";
+import Header from "../components/Header";
 
 function PaginaInicio() {
-    return (
-        <>
-
-<Header/>
+  return (
+    <>
+      <Header />
       <section className="layout__principal">
         <div className="principal__contain">
           {/* <!-- GRID 1 --> */}
@@ -27,7 +26,7 @@ function PaginaInicio() {
           </div>
 
           {/* <!-- GRID 2 --> */}
-          <FormRegistro/>
+          <FormRegistro />
         </div>
       </section>
 
@@ -52,21 +51,13 @@ function PaginaInicio() {
             </p>
           </div>
           <div className="nosotros__content-img">
-            <img
-              className="nosotros__img"
-              src="/img/modelo1.jpg"
-              alt=""
-            />
+            <img className="nosotros__img" src="/img/modelo1.jpg" alt="" />
           </div>
         </div>
 
         <div className="nosotros__grid-slider-2">
           <div className="nosotros__content-img">
-            <img
-              className="nosotros__img"
-              src="/img/podcast.png"
-              alt=""
-            />
+            <img className="nosotros__img" src="/img/podcast.png" alt="" />
           </div>
 
           <div className="nosotros-article__description">
@@ -236,12 +227,8 @@ function PaginaInicio() {
           </div>
         </div>
       </section>
-        
-        
-        </>
-    )
+    </>
+  );
 }
-
-
 
 export default PaginaInicio;

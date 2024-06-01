@@ -1,4 +1,5 @@
-//Se llama header auth porque el usuario debe de estar registrado y logueado para poder entrar a esta pagina
+//Se llama header auth porque el usuario debe de estar registrado 
+//y logueado para poder entrar a esta pagina
 
 
 
