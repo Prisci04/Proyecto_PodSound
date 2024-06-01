@@ -12,6 +12,7 @@
 
     --color-hover:#97b32c;
     --color-border: #eeeeee;
+    --color-footer: #c2c2c2;
 }
  
 /*Globales*/
@@ -728,9 +729,70 @@ img{
         width: 35rem;
     }
 
-
-
 }
+
+  /*Footer */
+  .footer{
+    background-color:var(--color-secundario);
+    padding: 1rem 0;
+    
+
+  }
+  .layout__footer{
+    margin: 2rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .about-me{
+    list-style: none;
+  }
+
+  .about-me__item{
+    margin-bottom: 1rem;
+  }
+
+  .redes-sociales{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 3rem;
+    
+    
+  }
+
+  .red-social__item{
+    color: var(--color-blanco);
+
+  }
+  .red-social__item a{
+    color: var(--color-footer);
+
+  }
+
+  .section__derechos{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  .contacto__footer {
+    align-items: center; /* Centra el contenido horizontalmente */
+    text-align: center;  /* Centra el texto horizontalmente */
+  }
+
+  .contacto__footer a{
+    font-size: 3rem;
+    margin:  1rem;
+    color: var(--color-footer);
+  }
+
+.parrafo{
+  color: var(--color-footer);
+}
+  
 
 
 
