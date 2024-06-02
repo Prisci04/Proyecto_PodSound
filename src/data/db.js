@@ -1,4 +1,4 @@
-export const dbPlanes =[
+export  const dbPlanes =[
 
     {
         id:1,
