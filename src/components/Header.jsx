@@ -19,7 +19,7 @@ function Header() {
             <nav className="navegacion">
               <a
                 href="#"
-                className="navegacion__enlace nav__item--active "
+                className="navegacion__enlace nav__item "
               >
                 Inicio
               </a>

@@ -1,4 +1,3 @@
-import React from "react";
 
 function CardPlanes({plan}) {
   const {id,tipoPlan,precio,descripcion} = plan
@@ -18,7 +17,7 @@ function CardPlanes({plan}) {
           <p className="planes__precio">${precio}</p>
           <ul className="lista__planes">
             {descripcion.map(des=>(
-              <li className="planes__descripcion">{des}</li>
+              <li className="planes__descripcion" >{des}</li>
             ))}
            
              

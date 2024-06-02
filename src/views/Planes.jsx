@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { dbPlanes } from "../data/db";
-import CardPlanes from "../components/CardPlanes"
+import{ useState } from "react";
+
+import {dbPlanes}from '../Data/db.js'
+ import CardPlanes from '../components/CardPlanes.jsx'
 function Planes() {
   const [data, setData] = useState(dbPlanes)
   return (

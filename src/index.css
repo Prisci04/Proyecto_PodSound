@@ -1,6 +1,10 @@
 /* Todo css va aqui uwu */
 
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root{
     --color-principal: #bde038;
@@ -12,7 +16,6 @@
 
     --color-hover:#97b32c;
     --color-border: #eeeeee;
-    --color-footer: #c2c2c2;
 }
  
 /*Globales*/
@@ -90,6 +93,9 @@ img{
 }
 
 
+
+
+
 /* Contenido */
 .layout__principal{
   /* background-color: #285A84; */
@@ -137,9 +143,7 @@ img{
 
 
 /* PARTE FORM */
-.form__content{
-  /* background-color: #fdfaa8; */
-}
+
 
 .form__content-contain{
   background-color: var(--color-secundario);
@@ -601,9 +605,7 @@ img{
       
       }
 
-      .nosotros__grid-slider-1{
-        
-      }
+      
 }
 
 
@@ -729,71 +731,242 @@ img{
         width: 35rem;
     }
 
+
+
 }
 
-  /*Footer */
-  .footer{
-    background-color:var(--color-secundario);
-    padding: 1rem 0;
-    
+/* EDITAR PERFIL */
 
-  }
-  .layout__footer{
-    margin: 2rem;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-  }
-
-  .about-me{
-    list-style: none;
-  }
-
-  .about-me__item{
-    margin-bottom: 1rem;
-  }
-
-  .redes-sociales{
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    font-size: 3rem;
-    
-    
-  }
-
-  .red-social__item{
-    color: var(--color-blanco);
-
-  }
-  .red-social__item a{
-    color: var(--color-footer);
-
-  }
-
-  .section__derechos{
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 2rem;
-  }
-
-  .contacto__footer {
-    align-items: center; /* Centra el contenido horizontalmente */
-    text-align: center;  /* Centra el texto horizontalmente */
-  }
-
-  .contacto__footer a{
-    font-size: 3rem;
-    margin:  1rem;
-    color: var(--color-footer);
-  }
-
-.parrafo{
-  color: var(--color-footer);
+.body__edit-profile {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+/* Edit Profile Styles */
+.edit-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+}
+
+#profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #ced4da;
+  margin: 0 auto;
+  
+}
+
+.form-group {
+  width: 50%;
+  max-width: 300px;
+  margin-bottom: 2px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input::file-selector-button{ 
+  font-size: 11px;
+  margin-top: 20px;
+
+}
+
+input[type="file"]{
+  font-size: 1.1rem
+}
+
+
+/* RANKING */
+
+.ranking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ranking-item {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  background-color: #f8f9fa; /* Color de fondo del cuadro */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-item img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.ranking-details {
+  padding: 1rem;
+}
+
+.ranking-details h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.ranking-details p {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+
+
+/* HEADER AUTHENTICATION */
+
+.layout__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 8rem;
+  
+}
+
+.header__content{
+  width: 200px;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 300px;
+  padding: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  margin: 0 auto; /* Añadido para centrar la barra de búsqueda */
+}
+
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 30px; /* Mover todo lo posible hacia la derecha */
+}
+
+.profile-icon ion-icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 2rem;
+}
+
+
+
+
+
+
+/* Iniciar sesion */
+
+.contain__inicio-sesion, .contain__recuperar-pass{  /*padre */
+  background-image: url(/img/bg-inicio-sesion.png);
+  width: 100%;
+  height: 70rem;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  display: flex;
+  justify-content: center;
   
 
+}
+
+.section__form-inicio{
+  background-color: var(--color-secundario);
+  width: 40rem;
+  height: 40rem;
+  margin-top: 5rem;
+  border-radius: 1rem;
+  
+  align-items: center;
+  text-align: center;
+  
+}
+
+.section__form-contain{ 
+  margin-top: 5rem ;
+  
+}
+
+.titulo-inicio{
+  margin-bottom: 3rem;
+  color: var(--color-blanco);
+}
+
+ .contenido__input-inicio{ /*div que envuelve al input */
+  margin-bottom: 3rem;
+}
+
+.input__item-inicio{ /*inputs */
+  padding: 1rem;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+}
+
+.contain__texto-recuperar-pass{ /*div que envuelve el texto olvidado contrasena */
+  margin-bottom: 3rem;
+}
+
+.texto-recuperar-pass, .link__regreso{
+  color: var(--color-blanco);
+  text-decoration: underline;
+}
+
+.link__regreso{
+  color: var(--color-principal);
+}
+
+.texto{
+  margin-top: 1rem;
+  
+}
 
 
+/* Recuperar contraseña */
 
+.section__form-recuperar{
+  background-color: var(--color-secundario); 
+  width: 40rem;
+  height: 40rem;
+  margin-top: 5rem;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+
+.titulo-recuperar{
+  margin-bottom: 5rem;
+  color: var(--color-blanco);
+}
+ .contenido__input{
+  margin-bottom: 3rem;
+}
+
+ .input__item-recuperar{
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+ }
