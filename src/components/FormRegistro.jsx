@@ -14,13 +14,13 @@ function FormRegistro() {
 
   const navigate = useNavigate("");
 
-  const [user, setUser] = useState('');
+  const [username, setUserName] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const data = {
-    user,
+    username,
     email,
     password,
   };
@@ -28,11 +28,11 @@ function FormRegistro() {
   const registrarUsuario = () => {
     registerRequest(data)
       .then((response) => {
-        navigate("/");
-        console.log(response.message);
+        navigate("/login");
+        console.log(response);
       })
       .catch((error) => {
-        console.log(error.message);
+        console.log(error);
       });
   };
 
@@ -55,7 +55,7 @@ function FormRegistro() {
                 {...register("userName", {
                   required: "El nombre del usuario es obligatorio",
                 })}
-                onChange={(evt) => setUser(evt.target.value)}
+                onChange={(evt) => setUserName(evt.target.value)}
               />
               {errors.userName && (
                 <Error>{errors.userName?.message?.toString()}</Error>

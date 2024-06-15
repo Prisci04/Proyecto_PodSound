@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <>
@@ -5,14 +7,14 @@ function Header() {
         <div className="contenedor">
           <div className="barra">
             <div className="contain__logo">
-              <a className="logo" href="index.html">
+              <Link to="/" className="">
                 <img
                   className="content__img img__logo"
                   src="/img/logo-img.png"
                   alt=""
                   type="img/svg"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* <!-- NAVEGACION --> */}
