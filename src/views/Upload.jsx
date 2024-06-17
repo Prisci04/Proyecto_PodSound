@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { getCategorias } from '../api/categoria'
 import { crearPodcast } from '../api/podcast.js'
 import { set } from 'react-hook-form'
-
+import Spinner from '../components/Spinner'
 function Upload() {
     const [categorias, setCategorias] = useState([])
 
@@ -11,6 +11,9 @@ function Upload() {
     const [descripción, setDescripción] = useState('')
     const [nombre, setNombre] = useState('')
     const [selectedCategoria, setSelectedCategoria] = useState('')
+
+    const [loading, setLoading] = useState(false)
+
 
     useEffect(() => {
         getCategorias().then(response => {
@@ -25,11 +28,13 @@ const handleEnviar = (evt) => {
     formData.append('description', descripción);
     formData.append('categoria', selectedCategoria);
     formData.append('file', podcast);
-    
+    setLoading(true)
     crearPodcast(formData)
      .then(response => {
+        setLoading(false)   
         console.log(response)
     }).catch(error => {
+        setLoading(false)
         console.log(error)
     })
     
@@ -40,6 +45,9 @@ const handleEnviar = (evt) => {
         <h1 className="main-title">Creación de Podcast</h1>
         <hr className="divider"/>
         <section className="podcast-publication">
+        {
+        loading ? <Spinner /> : (
+        
             <form 
                 onSubmit={handleEnviar}
                 className="podcast-form"
@@ -89,6 +97,8 @@ const handleEnviar = (evt) => {
                         >SUBIR</button>
                 </div>
             </form>
+        )
+        }
             <div className="texto">
                 <Link className="link__regreso2" to="/main-categoria">Volver</Link>
             </div>
