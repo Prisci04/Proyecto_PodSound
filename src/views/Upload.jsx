@@ -1,12 +1,13 @@
 import React, { useEffect,useState} from 'react'
 import { Link } from 'react-router-dom'
 import { getCategorias } from '../api/categoria'
-import { crearPodcast } from '../api/podcast'
+import { crearPodcast } from '../api/podcast.js'
+import { set } from 'react-hook-form'
 
 function Upload() {
     const [categorias, setCategorias] = useState([])
 
-    const[podcast, setPodcast] = useState('')
+    const[podcast, setPodcast] = useState([])
     const [descripción, setDescripción] = useState('')
     const [nombre, setNombre] = useState('')
     const [selectedCategoria, setSelectedCategoria] = useState('')
@@ -16,28 +17,18 @@ function Upload() {
             setCategorias(response.data.data)
         })
     }, [])
-function convertBose64(evt) {
-    console.log(evt)
-    var reader = new FileReader();
-    reader.readAsDataURL(evt.target.files[0]);
-    reader.onload =  ()=> {
-        console.log(reader.result);//base64encoded string
-        setPodcast(reader.result)
-    };
-    reader.onerror = function (error) {
-        console.log('Error: ', error);
-    }
-}
+
 const handleEnviar = (evt) => {
     evt.preventDefault()
-    crearPodcast({
-        nombre: nombre,
-        descripcion: descripción,
-        categoria: selectedCategoria,
-        podcast: podcast
-    }).then(response => {
-        console.log(response)
+    const formData = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('description', descripción);
+    formData.append('categoria', selectedCategoria);
+    formData.append('file', podcast);
     
+    crearPodcast(formData)
+     .then(response => {
+        console.log(response)
     }).catch(error => {
         console.log(error)
     })
@@ -50,8 +41,9 @@ const handleEnviar = (evt) => {
         <hr className="divider"/>
         <section className="podcast-publication">
             <form 
-            onSubmit={handleEnviar}
-            className="podcast-form"
+                onSubmit={handleEnviar}
+                className="podcast-form"
+                enctype="multipart/form-data"
             >
                 <div className="form-group">
                     <label htmlFor="podcast-image">Subir Podcast</label>
@@ -59,7 +51,7 @@ const handleEnviar = (evt) => {
                         type="file" 
                         id="podcast-image" 
                         accept="audio/*"
-                        onChange={convertBose64}
+                        onChange={(evt)=> {setPodcast(evt.target.files[0])}}
                     />
                 </div>
                 <div className="form-group">
@@ -74,6 +66,7 @@ const handleEnviar = (evt) => {
                 <div className="form-group">
                     <label htmlFor="podcast-topic">Categoria</label>
                     <select id="podcast-topic" onChange={(evt)=>{setSelectedCategoria(evt.target.value)}}>
+                        <option value="">Selecciona una categoría</option>
                         {categorias.map(categoria => (
                             <option  key={categoria._id} value={categoria._id}>{categoria.nombre}</option>
                         
