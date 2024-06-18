@@ -13,18 +13,18 @@ function App() {
 
   return (
 
-    <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<MainLayout />}></Route>
-        <Route path='/login' element={<LoginPage />}></Route>
-        <Route path="/inicio-Sesion" element={<LoginPage />}></Route>
-        <Route path="/main-categoria" element={<MainBusqueda />}> </Route>
-        <Route path="/categoria/:id" element={<CategoriasID />}> </Route>
-        <Route path="/podcast" element={<Upload />}> </Route>
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Header/>
+    //   <Routes>
+    //     <Route path='/' element={<MainLayout />}></Route>
+    //     <Route path='/login' element={<LoginPage />}></Route>
+    //     <Route path="/inicio-Sesion" element={<LoginPage />}></Route>
+    //     <Route path="/main-categoria" element={<MainBusqueda />}> </Route>
+    //     <Route path="/categoria/:id" element={<CategoriasID />}> </Route>
+    //     <Route path="/podcast" element={<Upload />}> </Route>
+    //   </Routes>
+    //   <Footer />
+    // </BrowserRouter>
 
 
     <AuthProvider>
@@ -42,6 +42,9 @@ function App() {
           <Route path='/crear-podcast' element={<CrearPodcast/>}></Route>
           <Route path='/menu' element={<MenuPage/>}></Route>
           <Route path='/perfil/:id' element={<ProfilePage/>}></Route>
+          <Route path="/main-categoria" element={<MainBusqueda />}> </Route>
+          <Route path="/categoria/:id" element={<CategoriasID />}> </Route>
+          <Route path="/podcast" element={<Upload />}> </Route>
           <Route path="*" element={<NotFound/>}></Route>
         
         </Route>
