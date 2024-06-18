@@ -43,8 +43,7 @@ function PaginaInicio() {
       <Contacto/>
 
 
-      {/* FOOTER */}
-      <Footer/>
+      
 
       
     </>

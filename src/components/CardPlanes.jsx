@@ -16,8 +16,9 @@ function CardPlanes({plan}) {
         <div className="planes__content">
           <p className="planes__precio">${precio}</p>
           <ul className="lista__planes">
-            {descripcion.map(des=>(
-              <li className="planes__descripcion" >{des}</li>
+            {descripcion.map((des, index)=>(
+              
+              <li key={index} className="planes__descripcion" >{des}</li>
             ))}
            
              
