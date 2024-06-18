@@ -21,7 +21,7 @@ function MenuPage() {
           </div>
 
           <div className="menu-card">
-            <Link className="menu-title" to='/crear-podcast'>Subir Podcast</Link>
+            <Link className="menu-title" to='/podcast'>Subir Podcast</Link>
           </div>
 
           <div className="menu-card">

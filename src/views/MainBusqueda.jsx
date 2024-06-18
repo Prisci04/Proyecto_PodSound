@@ -14,29 +14,19 @@ function MainBusqueda() {
     }, [])
   return (
     <>
-        <header class="layout__header">
-            <div class="header__content">
-                <img src="/img/logo-img.png" alt="Logo" class="content__img" type="img/svg"/>
-            </div>
+        
 
-            <input type="text" class="search-bar" placeholder="Buscar..."/>
-            <div class="profile-icon">
-                <ion-icon name="person-circle-outline"></ion-icon>
-                <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
-            </div>
-        </header>
-
-        <main class="main-content">
-            <h1 class="main-title">Búsqueda de Podcast</h1>
-            <hr class="divider"/>
-            <h2 class="sub-title">Descubre más podcast</h2>
+        <main className="main-content">
+            <h1 className="main-title">Búsqueda de Podcast</h1>
+            <hr className="divider"/>
+            <h2 className="sub-title">Descubre más podcast</h2>
             
-            <div class="podcast-grid">
+            <div className="podcast-grid">
                 
                 <PodcastCard  categoryPodcast={categoryPodcast}/>
             </div>
-            <div class="texto">
-            <a class="link__regreso2" href="index.html">Volver</a>
+            <div className="texto">
+            <a className="link__regreso2" href="index.html">Volver</a>
             </div>
         </main>
     </>

@@ -99,9 +99,7 @@ const handleEnviar = (evt) => {
             </form>
         )
         }
-            <div className="texto">
-                <Link className="link__regreso2" to="/main-categoria">Volver</Link>
-            </div>
+            
         </section>
     </main>
   )
