@@ -1,5 +1,4 @@
 import FormRegistro from "../components/FormRegistro";
-import Header from "../components/Header";
 import Nosotros from "../components/Nosotros";
 import Planes from "../components/Planes";
 import Contacto from "../components/Contacto";

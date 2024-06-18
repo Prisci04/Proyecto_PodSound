@@ -21,4 +21,4 @@ function RutasProtegidas() {
   )
 }
 
-export default RutasProtegidas
+export default RutasProtegidas;
