@@ -26,6 +26,36 @@ function App() {
       <Footer />
     </BrowserRouter>
 
+
+    <AuthProvider>
+      <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<PaginaInicio />}></Route>
+        <Route path='/login' element={<LoginPage />}></Route>
+        <Route path="/recuperar-pass" element={<ForgotPassPage/>}></Route>
+        <Route path="*" element={<NotFound/>}></Route>
+        <Route path="/planes" element={<PlanesProximo/>}></Route>
+        
+        <Route element={<RutasProtegidas/>} >
+          <Route path='/busqueda' element={<Busqueda />}></Route>
+          <Route path='/crear-podcast' element={<CrearPodcast/>}></Route>
+          <Route path='/menu' element={<MenuPage/>}></Route>
+          <Route path='/perfil/:id' element={<ProfilePage/>}></Route>
+          <Route path="*" element={<NotFound/>}></Route>
+        
+        </Route>
+
+
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
+
+
+    </AuthProvider>
+
+    
+
   );
 }
 

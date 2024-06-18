@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
-import { loginRequest, registerRequest } from "../api/auth";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import Error from "./Error";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import { useSnackbar } from "notistack";
-import { useState } from "react";
+
+import { useAuth } from "../context/AuthContext";
 
 function FormRegistro() {
   const {
@@ -11,54 +12,40 @@ function FormRegistro() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { signup, isAuthenticated, errors: registerError } = useAuth();
+  const navigate = useNavigate();
 
-  const navigate = useNavigate("");
+  useEffect(() => {
+    if (isAuthenticated) navigate("/busqueda");
+  }, [isAuthenticated]);
 
-  const [username, setUserName] = useState('');
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const data = {
-    username,
-    email,
-    password,
-  };
-
-  const registrarUsuario = () => {
-    registerRequest(data)
-      .then((response) => {
-        navigate("/login");
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  const onSubmit = handleSubmit(async (values) => {
+    signup(values);
+  });
 
   return (
     <>
       <div className="form__content">
+        {registerError.map((error, i) => (
+          <div className="error-register" key={i}>
+            {error}
+          </div>
+        ))}
+
         <div className="form__content-contain">
           <h2 className="titulo-registro">Registro</h2>
 
-          <form
-            className="form"
-            noValidate
-            onSubmit={handleSubmit(registrarUsuario)}
-          >
+          <form className="form" onSubmit={onSubmit}>
             <div className="contenido__input">
               <input
                 className="input__item"
                 type="text"
                 placeholder="Escribe tu usuario"
-                {...register("userName", {
-                  required: "El nombre del usuario es obligatorio",
-                })}
-                onChange={(evt) => setUserName(evt.target.value)}
+                {...register("username", { required: true })}
               />
-              {errors.userName && (
-                <Error>{errors.userName?.message?.toString()}</Error>
+              {/* esto se peude cambiar */}
+              {errors.username && (
+                <p className="texto-error">Username es requerido</p>
               )}
             </div>
 
@@ -67,17 +54,10 @@ function FormRegistro() {
                 className="input__item"
                 type="email"
                 placeholder="Escribe tu e-mail"
-                {...register("email", {
-                  required: "El Email es Obligatorio",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Email No Válido",
-                  },
-                })}
-                onChange={(evt) => setEmail(evt.target.value)}
+                {...register("email", { required: true })}
               />
               {errors.email && (
-                <Error>{errors.email?.message?.toString()}</Error>
+                <p className="texto-error">Email es requerido</p>
               )}
             </div>
 
@@ -86,27 +66,22 @@ function FormRegistro() {
                 className="input__item"
                 type="password"
                 placeholder="Escribe tu contraseña"
-                {...register("password", {
-                  required: "El password es obligatorio",
-
-                  minLength: {
-                    value: 6,
-                    message: "Minimo de 6 caracteres",
-                  },
-                })}
-                onChange={(evt) => setPassword(evt.target.value)}
+                {...register("password", { required: true })}
               />
               {errors.password && (
-                <Error>{errors.password?.message?.toString()}</Error>
+                <p className="texto-error">password es requerido</p>
               )}
+
             </div>
+
+
             <div className="contenido__input">
               <input
                 className="input__item"
                 type="password"
                 placeholder="Repite tu contraseña"
-                {...register("confirm-password", { required: true })}
-                onChange={(evt) => setConfirmPassword(evt.target.value)}
+                {...register("confirmPassword", { required: true })}
+                
               />
             </div>
 
@@ -114,8 +89,8 @@ function FormRegistro() {
               Registrarse
             </button>
           </form>
-          <Link to="/inicio-Sesion" className="inicio-sesion">
-            INICIAR SESION
+          <Link to="/login" className="inicio-sesion">
+            Iniciar sesión
           </Link>
         </div>
       </div>
